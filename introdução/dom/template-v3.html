@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ titulo }}</p>
+        <p personalizado="abc">{{ saudacao() }}</p>  <!-- document.querySelector('[personalizado]').getAttribute('personalizado') -->
+        <a v-bind:href="link">Google</a>  <!-- fazendo bind v-bind:ATRIBUTO-->
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'olar',
+                link: 'http://google.com.br'
+            },
+            methods: {
+                saudacao(){
+                    return this.titulo;
+                }
+            }
+        });
+    </script>
+
+
+
+</body>
+</html>
