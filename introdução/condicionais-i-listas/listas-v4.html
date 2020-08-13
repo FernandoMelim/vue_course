@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        ul {
+            list-style: square;
+        }
+
+        h1, p {
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(cor, i) in cores" :value="cor">{{ cor }} - {{ i }}</li> <!-- for coloca na tag que será repetido-->
+        </ul>
+        <hr>
+        <template v-for="(cor,i) in cores">
+            <h1>{{ cor }}</h1>
+            <p>{{ i }}</p>
+        </template>
+        <hr>
+        <div v-for="(cor,i) in cores">
+            <h1>{{ cor }}</h1>
+            <p>{{ i }}</p>
+        </div>
+        <hr>
+        <ul>
+            <li v-for="pessoa in pessoas">
+                <spam v-for="(valor, chave, index) in pessoa">{{ chave }}: {{ valor }} - {{ index }} </spam>
+                <!-- chave é o nome da variavel -->
+                <!-- index é o índice -->
+            </li>
+        </ul>
+        <hr>
+        <div v-for="n in 10">{{ n }}</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+                pessoas: [
+                    {nome: 'Ana', idade: 26, peso: 59},
+                    {nome: 'Guilherme', idade: 22, peso: 89}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
