@@ -1,0 +1,143 @@
+.player {
+    margin-top: 5%;
+    display: inline-block;
+    margin-left: 15%;
+    width: 50%;
+}
+
+.progressBar {
+    border: solid 1px black;
+    width: 50%;
+    height: 20px;
+}
+
+.monster {
+    margin-top: 5%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+}
+
+
+.player p, .monster p {
+    margin-left: 22%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.porcentagem {
+    text-align: center;
+    margin-top: 5px;
+    color: black;
+
+}
+
+.player p {
+    color: blue;
+    margin-right: 75%;
+}
+
+.monster p {
+    color: red;
+    margin-right: 75%;
+}
+
+
+.acoes {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.fullfillPlayerLife {
+    background-color: blue;
+    height: 100%;
+}
+
+.fullfillMonsterLife {
+    background-color: red;
+    height: 100%;
+}
+
+.acoes button {
+    all: unset;
+    margin: 0 10px;
+    padding: 10px 10px;
+    border-radius: 1mm;
+}
+
+#ataque {
+    background-color: rgb(245, 62, 62);
+    color: white;
+    text-transform: uppercase;
+}
+
+#start {
+    background-color: rgb(20, 177, 230);
+    color: white;
+    text-transform: uppercase; 
+}
+
+#start:active {
+    border: solid 3px rgb(111, 193, 221);
+}
+
+#ataque:active {
+    border: solid 3px rgb(111, 193, 221);
+}
+
+#ataqueEsp {
+    background-color: orange;
+    color: white;
+    text-transform: uppercase;
+}
+
+#ataqueEsp:active {
+    border: solid 3px rgb(111, 193, 221);
+}
+
+#curar {
+    background-color: rgb(61, 233, 61);
+    color: white;
+    text-transform: uppercase;
+}
+
+#curar:active {
+    border: solid 3px rgb(111, 193, 221);
+}
+
+#desistir {
+    background-color: grey;
+    color: white;
+    text-transform: uppercase;
+}
+
+#desistir:active {
+    border: solid 3px rgb(111, 193, 221);
+}
+
+#resultado {
+    text-align: center;
+    font-size: 30px;
+}
+
+#log {
+    width: 100%;
+    text-align: center;
+    margin: 50px 0;
+}
+
+#log div {
+    margin-left: 5%;
+    width: 90%;
+    height: 5%;
+    text-align: center;
+    border-radius: 1mm;
+    height: 50px;
+    font-size: 100%;
+}
+
+#log p {
+    font-size: 100%;
+    color: white;
+}
