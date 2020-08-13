@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue"></script>
+        <style>
+            #app {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .demo {
+                width: 100px;
+                height: 100px;
+                background-color: gray;
+                display: flex;
+            }
+
+            .c1 {
+                background-color: red;
+            }
+
+            .c2 {
+                background-color: green;
+            }
+
+            .c3 {
+                background-color: blue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="demo"  @click="aplicarC1 = !aplicarC1" :class="{c1: aplicarC1}"></div>
+            <!-- :class="{c1: aplicarC1}"  c1: nome da classe, aplicarC1: variável 
+                que define se classe será aplicada ou não -->
+            <div class="demo"></div>
+            <div class="demo"></div>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    aplicarC1: false
+                }, 
+                methods:{
+
+                },
+                watch: {
+
+                },
+                computed: {
+
+                }
+            });
+        </script>
+    </body>
+</html>

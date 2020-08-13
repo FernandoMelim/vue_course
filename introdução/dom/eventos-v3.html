@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ contador }}</p>
+        <button v-on:click="somar($event, 5)">Somar 1</button> <!-- $event é o evento passado como parametro -->
+        <p v-on:mousemove="atualizarXY">
+            Mouse: {{ x }} e {{ y }}
+            <span v-on:mousemove.stop.prevent>PARAR AQUI!</span> <!-- para a propagação do evento -->
+        </p>
+        <a v-on:click="naoNavegar" href="http://google.com.br">Google</a> <hr>
+        <!-- v-on:click.prevent previne a ação padrão, ou seja, não vai pro site do google -->
+        <input type="text" v-on:keyup.a.enter="exibirAlerta">
+        <!-- keyup -> toda vez q apertar tecla ele executa o método -->
+        <!-- v-on:keyup.a -> toda vez q apertar tecla 'a' ele executa o método -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                somar(event, passo){
+                    this.contador += passo;
+                },
+                atualizarXY(event){
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                naoNavegar(event){
+                    event.preventDefault();
+                },
+                exibirAlerta(){
+                    alert("hello");
+                }
+                // parar(event){
+                //     event.stopPropagation();
+                // }
+            }
+        });
+    </script>
+</body>
+</html>

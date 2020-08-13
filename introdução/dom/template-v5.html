@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-once>{{ titulo }}</p> 
+        <!-- v-once vai carregar o titulo apenas uma vez e ele não é atualizado caso a varável seja alterada-->
+        <p personalizado="abc">{{ saudacao() }}</p>  
+        <!-- document.querySelector('[personalizado]').getAttribute('personalizado') -->
+        <a v-bind:href="link">Google</a>  <!-- fazendo bind v-bind:ATRIBUTO-->
+        <hr>
+        <p v-html="linkHtml"></p> <!-- le o conteudo da variavel linkHtml como html e não string -->
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Olar!',
+                link: 'http://google.com.br',
+                linkHtml: '<a href="http://google.com.br">Google</a>'
+            },
+            methods: {
+                saudacao(){
+                    this.titulo = 'Bom dia!';
+                    return this.titulo;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

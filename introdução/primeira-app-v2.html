@@ -12,8 +12,8 @@
             titulo: 'Usando vue js 2!'
         },
         methods: {
-            alterarTitulo(elemento) {
-                this.titulo = elemento.target.value;
+            alterarTitulo(event) {
+                this.titulo = event.target.value;
             }
         }
     });

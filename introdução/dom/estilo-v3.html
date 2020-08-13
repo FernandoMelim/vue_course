@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .caixas {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: flex;
+        }
+
+        .c1 {
+            background-color: red;
+        }
+
+        .c2 {
+            background-color: green;
+        }
+
+        .c3 {
+            background-color: blue;
+        }
+
+        .girar {
+            transform: rotate(42deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="caixas">
+
+            <div class="demo" :class="estilo1" @click="aplicarC1 = !aplicarC1"></div>
+            <!-- :class="{c1: aplicarC1}"  c1: nome da classe, aplicarC1: variável 
+                        que define se classe será aplicada ou não -->
+            <div class="demo"></div>
+
+
+            <div class="demo" :class="[classeCSS, girarounao]">
+                <select v-model="aplicarGirar">
+                    <option value="true">Girar</option>
+                    <option value="false">Não girar</option>
+                </select>
+            </div>
+
+
+            <div class="demo" :class="select">
+                <select v-model="teste">
+                    <option value="none"></option>
+                    <option value="Teste1">Teste1</option>
+                    <option value="Teste2">Teste2</option>
+                    <option value="Teste3">Teste3</option>
+                </select>
+            </div>
+
+
+        </div>
+        <hr>
+        <input type="text" v-model="classeCSS">
+    </div>
+    <script>
+        var select1 = {
+            teste1: "Teste1",
+            teste2: "Teste2",
+            teste3: "Teste3"
+        };
+
+        new Vue({
+            el: '#app',
+            data: {
+                aplicarC1: false,
+                classeCSS: 'c1',
+                teste: '',
+                aplicarGirar: null
+            },
+            computed: {
+                estilo1() {
+                    return {
+                        c1: this.aplicarC1,
+                        c2: !this.aplicarC1
+                    }
+                },
+                select() {
+                    return {
+                        c1: this.teste == select1.teste1,
+                        c2: this.teste == select1.teste2,
+                        c3: this.teste == select1.teste3
+                    }
+                },
+                girarounao() {
+                    return {
+                        girar: this.aplicarGirar == "true"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
