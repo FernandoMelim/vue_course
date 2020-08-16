@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <comp></comp>
+        <comp></comp>
+        <comp></comp>
+        <comp></comp>
+    </div>
+
+
+    <script>
+
+        var dados =
+            Vue.component('comp', {
+                template: `
+                    <div>
+                        <h1>{{ aula }}</h1>
+                        {{ aula }}
+                        {{ modulo }}
+                        <button @click="alterarAula()">Alterar aula</button>
+                        <button @click="alterarModulo()">Alterar modulo</button>
+                    </div>`,
+                data: function () {
+                    return {
+                        aula: "aasfgdfgsdfaaaa",
+                        modulo: "instancia vue"
+                    }
+                },
+                methods: {
+                    alterarAula() {
+                        this.aula += '#';
+                    },
+                    alterarModulo() {
+                        this.modulo += '#';
+                    }
+                },
+                // MÉTODOS PADRÃO
+                beforeCreate() {
+                    // antes de criar instancia
+                },
+                created() {
+                    // apos criar instancia
+                },
+                beforeMount() {
+                    // atens de montar o dom
+                },
+                mounted() {
+                    // depois de criar o dom
+                },
+                beforeUpdate() {
+                    // antes de atualizar algo na instancia
+                },
+                updated() {
+                    // após atualizar algo na instancia
+                },
+                beforeDestroy() {
+                    // antes de destruir a instancia
+                },
+                destroyed() {
+                    // depois de destruir a instancia
+                }
+            });
+        const vm = new Vue({
+            el: "#app",
+            // el: 'comp', // acessando componente
+        });
+
+    </script>
+</body>
+
+</html>

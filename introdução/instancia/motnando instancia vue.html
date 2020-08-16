@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+
+
+    <script>
+        const vm = new Vue({
+            //el: "#app",
+            template: `
+            <div>
+                <h1>{{ aula }}</h1>
+                {{ aula }}
+                {{ modulo }}
+                <button @click="alterarAula()">Alterar aula</button>
+                <button @click="alterarModulo()">Alterar modulo</button>
+            </div>`,
+            data: {
+                aula: "aasfgdfgsdfaaaa",
+                modulo: "instancia vue"
+            },
+            methods: {
+                alterarAula() {
+                    this.aula += '#';
+                },
+                alterarModulo() {
+                    this.modulo += '#';
+                }
+            }
+        });
+
+        //vm.$mount('#app'); // seta o el
+
+        vm.$mount();
+        document.querySelector('#app').appendChild(vm.$el);
+    </script>
+</body>
+
+</html>
